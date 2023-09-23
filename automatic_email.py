@@ -7,6 +7,7 @@ from email.mime.application import MIMEApplication
 import os
 import schedule
 import logging
+from decouple import config
 
 # Configure logging
 logging.basicConfig(filename='email_log.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -14,11 +15,11 @@ logging.basicConfig(filename='email_log.txt', level=logging.INFO, format='%(asct
 # Email server settings
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-EMAIL_ADDRESS = 'custom.demo.email@gmail.com'
-EMAIL_PASSWORD = 'ebhylihgrbjwgyww'
+EMAIL_ADDRESS = config("EMAIL_ADDRESS")
+EMAIL_PASSWORD = config("EMAIL_PASSWORD")
 
 # List of recipients
-CLIENT_EMAILS = ['lyubomira_mihova@abv.bg', 'lyubomiramihova@gmail.com']
+CLIENT_EMAILS = config("CLIENT_EMAILS")
 
 # Report files directory
 REPORTS_DIR = 'reports/'
@@ -60,5 +61,5 @@ def send_daily_reports():
         server.quit()
 
 
-# send_daily_reports()
-schedule.every().day.at('10:00').do(send_daily_reports)
+send_daily_reports()
+# schedule.every().day.at('10:00').do(send_daily_reports)

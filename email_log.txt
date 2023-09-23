@@ -1,2 +1,3 @@
 2023-09-23 16:06:13,874 - INFO - Send report to lyubomira_mihova@abv.bg.
 2023-09-23 16:06:15,085 - INFO - Send report to lyubomiramihova@gmail.com.
+2023-09-23 16:27:12,698 - ERROR - Error: [Errno 13] Permission denied: 'reports/.idea'
