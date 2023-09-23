@@ -19,7 +19,7 @@ EMAIL_ADDRESS = config("EMAIL_ADDRESS")
 EMAIL_PASSWORD = config("EMAIL_PASSWORD")
 
 # List of recipients
-CLIENT_EMAILS = config("CLIENT_EMAILS")
+CLIENT_EMAILS = ['lyubomira_mihova@abv.bg', 'lyubomiramihova@gmail.com']
 
 # Report files directory
 REPORTS_DIR = 'reports/'
